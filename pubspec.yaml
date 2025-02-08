@@ -22,7 +22,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/animations/loading.json
+    - assets/animations/loading_animation.json
   fonts:
     - family: Montserrat
       fonts:

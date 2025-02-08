@@ -28,7 +28,7 @@ class BodyOfDetailScreenWidget extends StatelessWidget {
                     if (loadingProgress == null) return child;
                     return Center(
                       child: Lottie.asset(
-                        'assets/animations/loading.json',
+                        'assets/animations/loading_animation.json',
                         width: 150,
                         height: 150,
                         fit: BoxFit.contain,

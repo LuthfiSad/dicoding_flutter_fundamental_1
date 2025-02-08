@@ -57,25 +57,21 @@ class RestaurantTheme {
 
   static ThemeData get darkTheme {
     return ThemeData(
-      colorScheme: ColorScheme.dark(
-        primary: RestaurantColors.primary.color,
-        onPrimary: RestaurantColors.onPrimary.color,
-        background: Colors.black,
-        surface: Colors.grey[850]!,
-        onBackground: Colors.white,
-        onSurface: Colors.white,
-        onSecondary: Colors.white,
-      ),
-      brightness: Brightness.dark,
-      textTheme: _textTheme.apply(
-        bodyColor: Colors.white,
-        displayColor: Colors.white,
-      ),
-      useMaterial3: true,
-      appBarTheme: _appBarTheme.copyWith(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
-      ),
-    );
+        colorScheme: ColorScheme.dark(
+          primary: RestaurantColors.primary.color,
+          onPrimary: RestaurantColors.onPrimary.color,
+          background: Colors.black,
+          surface: Colors.grey[850]!,
+          onBackground: Colors.white,
+          onSurface: Colors.white,
+          onSecondary: Colors.white,
+        ),
+        brightness: Brightness.dark,
+        textTheme: _textTheme.apply(
+          bodyColor: Colors.white,
+          displayColor: Colors.white,
+        ),
+        useMaterial3: true,
+        appBarTheme: _appBarTheme);
   }
 }
