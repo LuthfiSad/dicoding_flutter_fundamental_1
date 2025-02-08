@@ -103,7 +103,7 @@ class _AddReviewSectionWidgetState extends State<AddReviewSectionWidget> {
                 const SizedBox(height: 12),
                 CustomTextField(
                   controller: _reviewController,
-                  labelText: "Your Review",
+                  labelText: "Review",
                   maxLines: 3,
                 ),
                 const SizedBox(height: 16),
@@ -135,8 +135,11 @@ class _AddReviewSectionWidgetState extends State<AddReviewSectionWidget> {
                       onPressed: () => _submitReview(context),
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 14),
+                        backgroundColor: RestaurantColors.primary.color,
                       ),
-                      child: const Text("Submit Review"),
+                      child: Text("Submit Review",
+                          style: RestaurantTextStyles.titleSmall
+                              .copyWith(color: RestaurantColors.onPrimary.color)),
                     );
                   },
                 ),

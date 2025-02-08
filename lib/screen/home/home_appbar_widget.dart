@@ -12,10 +12,11 @@ class HomeAppbarWidget extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         children: [
           Icon(
-            Icons.restaurant_menu,
+            Icons.restaurant_rounded,
             color: RestaurantColors.onPrimary.color,
+            size: RestaurantTextStyles.headlineMedium.fontSize,
           ),
-          const SizedBox(width: 8),
+          const SizedBox(width: 12),
           Text(
             "Restaurant",
             style: RestaurantTextStyles.headlineSmall.copyWith(
@@ -28,21 +29,18 @@ class HomeAppbarWidget extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           icon: const Icon(Icons.search),
           color: RestaurantColors.onPrimary.color,
+          iconSize: RestaurantTextStyles.headlineLarge.fontSize,
           onPressed: () {
             Navigator.pushNamed(context, NavigationRoute.searchRoute.name);
           },
         ),
       ],
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
-      ),
-      backgroundColor: RestaurantColors.primary.color,
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(30.0),
         child: Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Text(
-            "Recommended restaurant for you!",
+            "Discover Your Next Favorite Spot!",
             style: RestaurantTextStyles.titleMedium.copyWith(
               color: RestaurantColors.secondary.color,
             ),
@@ -53,5 +51,5 @@ class HomeAppbarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(90.0);
+  Size get preferredSize => const Size.fromHeight(70.0);
 }

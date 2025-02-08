@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_flutter_dicoding/provider/setting/local_notification_provider.dart';
 import 'package:restaurant_flutter_dicoding/provider/setting/theme_provider.dart';
 import 'package:restaurant_flutter_dicoding/style/colors/restaurant_colors.dart';
 import 'package:restaurant_flutter_dicoding/style/typography/restaurant_text_styles.dart';
@@ -11,8 +10,6 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
-    final notificationProvider =
-        Provider.of<LocalNotificationProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -30,12 +27,6 @@ class SettingScreen extends StatelessWidget {
               ),
             ),
           ],
-        ),
-        backgroundColor: RestaurantColors.primary.color,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(16),
-          ),
         ),
       ),
       body: Padding(
@@ -56,24 +47,6 @@ class SettingScreen extends StatelessWidget {
                   value: themeProvider.isDarkTheme,
                   onChanged: (value) {
                     themeProvider.toggleTheme();
-                  },
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Notifications",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Enable Notifications"),
-                Switch(
-                  value: notificationProvider.isNotificationEnabled,
-                  onChanged: (value) {
-                    notificationProvider.toggleNotification(value);
                   },
                 ),
               ],

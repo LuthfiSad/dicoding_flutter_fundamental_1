@@ -18,12 +18,6 @@ class DetailAppbarWidget extends StatelessWidget
           color: RestaurantColors.onPrimary.color,
         ),
       ),
-      backgroundColor: RestaurantColors.primary.color,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(16),
-        ),
-      ),
     );
   }
 }

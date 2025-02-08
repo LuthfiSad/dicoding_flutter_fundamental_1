@@ -29,8 +29,8 @@ class RestaurantTheme {
       ),
       shape: const BeveledRectangleBorder(
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(14),
-          bottomRight: Radius.circular(14),
+          bottomLeft: Radius.circular(0),
+          bottomRight: Radius.circular(30),
         ),
       ),
       backgroundColor: RestaurantColors.primary.color,
