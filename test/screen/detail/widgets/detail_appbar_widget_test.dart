@@ -8,7 +8,7 @@ void main() {
   testWidgets('DetailAppbarWidget has the correct title and style',
       (WidgetTester tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: Scaffold(
           appBar: const DetailAppbarWidget(),
         ),

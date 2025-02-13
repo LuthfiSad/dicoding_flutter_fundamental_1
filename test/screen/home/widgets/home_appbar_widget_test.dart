@@ -10,8 +10,8 @@ void main() {
         routes: {
           NavigationRoute.searchRoute.name: (_) => Container(),
         },
-        home: Scaffold(
-          appBar: const HomeAppbarWidget(),
+        home: const Scaffold(
+          appBar: HomeAppbarWidget(),
         ),
       ),
     );
