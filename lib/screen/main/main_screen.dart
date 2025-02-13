@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_flutter_dicoding/provider/main/index_nav_provider.dart';
+import 'package:restaurant_flutter_dicoding/screen/favorite/favorite_screen.dart';
 import 'package:restaurant_flutter_dicoding/screen/home/home_screen.dart';
 import 'package:restaurant_flutter_dicoding/screen/setting/setting_screen.dart';
 import 'package:restaurant_flutter_dicoding/style/colors/restaurant_colors.dart';
@@ -15,6 +16,7 @@ class MainScreen extends StatelessWidget {
         builder: (context, value, child) {
           return switch (value.indexBottomNavBar) {
             0 => const HomeScreen(),
+            1 => const FavoriteScreen(),
             _ => const SettingScreen()
           };
         },
@@ -47,6 +49,11 @@ class MainScreen extends StatelessWidget {
                 icon: Icon(Icons.home),
                 label: "Home",
                 tooltip: "Home",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.favorite),
+                label: "Favorite",
+                tooltip: "Favorite",
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),

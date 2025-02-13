@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:restaurant_flutter_dicoding/data/model/restaurant_detail.dart';
 import 'package:lottie/lottie.dart';
+import 'package:restaurant_flutter_dicoding/provider/detail/favorite_icon_provider.dart';
+import 'package:restaurant_flutter_dicoding/provider/detail/restaurant_detail_provider.dart';
 import 'package:restaurant_flutter_dicoding/screen/detail/restaurant_description_widget.dart';
 import 'package:restaurant_flutter_dicoding/style/colors/restaurant_colors.dart';
 import 'package:restaurant_flutter_dicoding/style/typography/restaurant_text_styles.dart';
+import 'package:restaurant_flutter_dicoding/static/restaurant_detail_result_state.dart';
+import 'package:restaurant_flutter_dicoding/screen/detail/favorite_icon_widget.dart';
 
 class BodyOfDetailScreenWidget extends StatelessWidget {
   final RestaurantDetail restaurant;
@@ -49,9 +54,27 @@ class BodyOfDetailScreenWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Text(
-              restaurant.name,
-              style: RestaurantTextStyles.headlineLarge,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: Text(
+                    restaurant.name,
+                    style: RestaurantTextStyles.headlineLarge,
+                  ),
+                ),
+                ChangeNotifierProvider(
+                  create: (context) => FavoriteIconProvider(),
+                  child: Consumer<RestaurantDetailProvider>(
+                      builder: (context, value, child) {
+                    return switch (value.resultState) {
+                      RestaurantDetailLoadedState(data: var restaurant) =>
+                        FavoriteIconWidget(restaurant: restaurant),
+                      _ => const SizedBox(),
+                    };
+                  }),
+                )
+              ],
             ),
             const SizedBox(height: 8),
             Row(
