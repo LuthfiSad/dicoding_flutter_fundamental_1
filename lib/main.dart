@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:restaurant_flutter_dicoding/data/api/api_services.dart';
 import 'package:restaurant_flutter_dicoding/data/local/local_database_service.dart';
 import 'package:restaurant_flutter_dicoding/data/local/local_notification_service.dart';
+import 'package:restaurant_flutter_dicoding/data/workmanager/workmanager_services.dart';
 import 'package:restaurant_flutter_dicoding/provider/detail/restaurant_detail_provider.dart';
 import 'package:restaurant_flutter_dicoding/provider/favorite/local_database_provider.dart';
 import 'package:restaurant_flutter_dicoding/provider/home/restaurant_list_provider.dart';
@@ -21,9 +22,15 @@ import 'package:timezone/data/latest.dart' as tz;
 void main() async {
   tz.initializeTimeZones();
   WidgetsFlutterBinding.ensureInitialized();
+
   final localNotificationService = LocalNotificationService();
-  final notificationProvider =
-      LocalNotificationProvider(localNotificationService);
+  final workmanagerService = WorkmanagerService();
+
+  final notificationProvider = LocalNotificationProvider(
+    localNotificationService,
+    workmanagerService,
+  );
+
   await notificationProvider.initialize();
   runApp(
     MultiProvider(
@@ -57,7 +64,7 @@ void main() async {
         ChangeNotifierProvider(
           create: (context) => ThemeProvider(),
         ),
-         Provider(
+        Provider(
           create: (context) => LocalDatabaseService(),
         ),
         ChangeNotifierProvider(
@@ -65,12 +72,9 @@ void main() async {
             context.read<LocalDatabaseService>(),
           ),
         ),
-        Provider(create: (context) => LocalNotificationService()),
-        ChangeNotifierProvider(
-          create: (context) => LocalNotificationProvider(
-            context.read<LocalNotificationService>(),
-          ),
-        ),
+        Provider(create: (context) => localNotificationService),
+        Provider(create: (context) => workmanagerService),
+        ChangeNotifierProvider(create: (context) => notificationProvider),
       ],
       child: const MyApp(),
     ),

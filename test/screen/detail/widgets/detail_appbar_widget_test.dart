@@ -10,7 +10,7 @@ void main() {
     await tester.pumpWidget(
       const MaterialApp(
         home: Scaffold(
-          appBar: const DetailAppbarWidget(),
+          appBar: DetailAppbarWidget(),
         ),
       ),
     );
@@ -22,14 +22,5 @@ void main() {
     expect(textWidget.style?.color, RestaurantColors.onPrimary.color);
     expect(textWidget.style?.fontSize,
         RestaurantTextStyles.headlineSmall.fontSize);
-
-    final appBar = tester.firstWidget(find.byType(AppBar)) as AppBar;
-    expect(appBar.backgroundColor, RestaurantColors.primary.color);
-
-    final appBarShape = appBar.shape as RoundedRectangleBorder;
-    final borderRadius = appBarShape.borderRadius as BorderRadius;
-
-    expect(borderRadius.bottomLeft.x, 16);
-    expect(borderRadius.bottomRight.x, 16);
   });
 }

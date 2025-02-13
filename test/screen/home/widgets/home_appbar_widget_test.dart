@@ -18,13 +18,13 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    expect(find.byIcon(Icons.restaurant_menu), findsOneWidget);
+    expect(find.byIcon(Icons.restaurant_rounded), findsOneWidget);
 
     expect(find.text('Restaurant'), findsOneWidget);
 
     expect(find.byIcon(Icons.search), findsOneWidget);
 
-    expect(find.text('Recommended restaurant for you!'), findsOneWidget);
+    expect(find.text('Discover Your Next Favorite Spot!'), findsOneWidget);
 
     await tester.tap(find.byIcon(Icons.search));
     await tester.pumpAndSettle();
