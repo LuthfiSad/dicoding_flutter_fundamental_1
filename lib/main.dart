@@ -99,7 +99,7 @@ class MyApp extends StatelessWidget {
               restaurantId:
                   ModalRoute.of(context)?.settings.arguments as String,
             ),
-        NavigationRoute.searchRoute.name: (context) => SearchScreen(),
+        NavigationRoute.searchRoute.name: (context) => const SearchScreen(),
       },
     );
   }

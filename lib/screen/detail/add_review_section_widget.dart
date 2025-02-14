@@ -68,7 +68,7 @@ class _AddReviewSectionWidgetState extends State<AddReviewSectionWidget> {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Consumer<AddReviewSectionProvider>(
-          builder: (context, sectionProvider, child) {
+          builder: (context, sectionProvider, _) {
             return Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -108,7 +108,7 @@ class _AddReviewSectionWidgetState extends State<AddReviewSectionWidget> {
                 ),
                 const SizedBox(height: 16),
                 Consumer<RestaurantAddReviewProvider>(
-                  builder: (context, provider, child) {
+                  builder: (context, provider, _) {
                     if (provider.resultState is RestaurantReviewLoadingState) {
                       return const Center(
                         child: LoadingStateWidget(),

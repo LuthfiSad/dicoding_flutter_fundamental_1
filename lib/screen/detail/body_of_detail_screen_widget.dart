@@ -29,7 +29,7 @@ class BodyOfDetailScreenWidget extends StatelessWidget {
                 tag: restaurant.id,
                 child: Image.network(
                   "https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}",
-                  loadingBuilder: (context, child, loadingProgress) {
+                  loadingBuilder: (_, child, loadingProgress) {
                     if (loadingProgress == null) return child;
                     return Center(
                       child: Lottie.asset(
@@ -40,7 +40,7 @@ class BodyOfDetailScreenWidget extends StatelessWidget {
                       ),
                     );
                   },
-                  errorBuilder: (context, error, stackTrace) {
+                  errorBuilder: (_, __, ___) {
                     return Icon(
                       Icons.broken_image,
                       size: 50,
@@ -66,7 +66,7 @@ class BodyOfDetailScreenWidget extends StatelessWidget {
                 ChangeNotifierProvider(
                   create: (context) => FavoriteIconProvider(),
                   child: Consumer<RestaurantDetailProvider>(
-                      builder: (context, value, child) {
+                      builder: (_, value, __) {
                     return switch (value.resultState) {
                       RestaurantDetailLoadedState(data: var restaurant) =>
                         FavoriteIconWidget(restaurant: restaurant),

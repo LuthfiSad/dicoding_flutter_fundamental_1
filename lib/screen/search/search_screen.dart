@@ -6,6 +6,8 @@ import 'package:restaurant_flutter_dicoding/screen/search/search_bar_widget.dart
 import 'package:restaurant_flutter_dicoding/screen/search/search_result_widget.dart';
 
 class SearchScreen extends StatefulWidget {
+  const SearchScreen({super.key});
+
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }

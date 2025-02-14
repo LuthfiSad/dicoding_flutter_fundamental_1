@@ -45,7 +45,7 @@ void callbackDispatcher() async {
 }
 
 class WorkmanagerService {
-  static final WorkmanagerService _instance = WorkmanagerService._internal();
+  static final _instance = WorkmanagerService._internal();
   factory WorkmanagerService() => _instance;
   WorkmanagerService._internal();
 

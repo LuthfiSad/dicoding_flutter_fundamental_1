@@ -23,7 +23,7 @@ void main() {
             ),
           ),
         ],
-        child: MaterialApp(home: SearchScreen()),
+        child: const MaterialApp(home: SearchScreen()),
       ),
     );
 

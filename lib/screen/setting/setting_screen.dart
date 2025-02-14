@@ -41,36 +41,24 @@ class SettingScreen extends StatelessWidget {
               "Theme",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Dark Theme"),
-                Switch(
-                  value: themeProvider.isDarkTheme,
-                  onChanged: (value) {
-                    themeProvider.toggleTheme();
-                  },
-                ),
-              ],
+            SwitchListTile(
+              title: const Text("Dark Theme"),
+              value: themeProvider.isDarkTheme,
+              onChanged: (value) {
+                themeProvider.toggleTheme();
+              },
             ),
             const SizedBox(height: 20),
             const Text(
               "Notifications",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Enable Notifications"),
-                Switch(
-                  value: notificationProvider.isNotificationEnabled,
-                  onChanged: (value) {
-                    notificationProvider.toggleNotification(value);
-                  },
-                ),
-              ],
+            SwitchListTile(
+              title: const Text("Enable Notifications"),
+              value: notificationProvider.isNotificationEnabled,
+              onChanged: (value) {
+                notificationProvider.toggleNotification(value);
+              },
             ),
           ],
         ),

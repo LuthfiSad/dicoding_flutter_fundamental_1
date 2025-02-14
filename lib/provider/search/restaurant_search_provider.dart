@@ -20,8 +20,6 @@ class RestaurantSearchProvider extends ChangeNotifier {
       _resultState = RestaurantSearchLoadingState();
       notifyListeners();
 
-      await Future.delayed(const Duration(seconds: 2));
-
       final result = await _apiServices.getRestaurantByQuery(query);
 
       if (result.error) {

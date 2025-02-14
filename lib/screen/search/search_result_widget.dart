@@ -12,7 +12,7 @@ class SearchResultWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<RestaurantSearchProvider>(
-      builder: (context, provider, child) {
+      builder: (_, provider, __) {
         final state = provider.resultState;
 
         if (state is RestaurantSearchNoneState) {

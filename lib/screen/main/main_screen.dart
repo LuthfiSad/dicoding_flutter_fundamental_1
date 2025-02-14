@@ -13,7 +13,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Consumer<IndexNavProvider>(
-        builder: (context, value, child) {
+        builder: (_, value, __) {
           return switch (value.indexBottomNavBar) {
             0 => const HomeScreen(),
             1 => const FavoriteScreen(),

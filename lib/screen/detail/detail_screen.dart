@@ -66,7 +66,7 @@ class _DetailScreenState extends State<DetailScreen> {
         children: [
           Expanded(
             child: Consumer<RestaurantDetailProvider>(
-              builder: (context, provider, child) {
+              builder: (_, provider, __) {
                 return switch (provider.resultState) {
                   RestaurantDetailLoadingState() => const LoadingStateWidget(),
                   RestaurantDetailLoadedState(data: var restaurant) =>

@@ -34,7 +34,7 @@ class FavoriteCardWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12.0),
                   child: Image.network(
                     "https://restaurant-api.dicoding.dev/images/medium/${restaurant.pictureId}",
-                    loadingBuilder: (context, child, loadingProgress) {
+                    loadingBuilder: (_, child, loadingProgress) {
                       if (loadingProgress == null) return child;
                       return Center(
                         child: Lottie.asset(
@@ -45,7 +45,7 @@ class FavoriteCardWidget extends StatelessWidget {
                         ),
                       );
                     },
-                    errorBuilder: (context, error, stackTrace) {
+                    errorBuilder: (_, __, ___) {
                       return Icon(
                         Icons.broken_image,
                         size: 50,

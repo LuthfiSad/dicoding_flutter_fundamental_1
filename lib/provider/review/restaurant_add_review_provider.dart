@@ -24,8 +24,6 @@ class RestaurantAddReviewProvider extends ChangeNotifier {
       _resultState = RestaurantReviewLoadingState();
       notifyListeners();
 
-      await Future.delayed(const Duration(seconds: 2));
-
       final result = await _apiServices.postRestaurantReview(
         id,
         name,

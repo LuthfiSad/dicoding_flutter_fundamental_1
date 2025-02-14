@@ -3,9 +3,9 @@ import 'package:sqflite/sqflite.dart';
 import 'dart:convert';
 
 class LocalDatabaseService {
-  static const String _databaseName = 'restaurant-app.db';
-  static const String _tableName = 'restaurant';
-  static const int _version = 1;
+  static const _databaseName = 'restaurant-app.db';
+  static const _tableName = 'restaurant';
+  static const _version = 1;
 
   static final LocalDatabaseService _instance =
       LocalDatabaseService._internal();
@@ -88,7 +88,7 @@ class LocalDatabaseService {
           categories: (jsonDecode(result['categories'] as String) as List)
               .map((x) => Category.fromJson(x))
               .toList(),
-          menus: Menus.fromJson(jsonDecode(result['menus'] as String)),
+          menus: Menu.fromJson(jsonDecode(result['menus'] as String)),
           rating: result['rating'] as double,
           customerReviews:
               (jsonDecode(result['customerReviews'] as String) as List)
@@ -118,7 +118,7 @@ class LocalDatabaseService {
           categories: (jsonDecode(item['categories'] as String) as List)
               .map((x) => Category.fromJson(x))
               .toList(),
-          menus: Menus.fromJson(jsonDecode(item['menus'] as String)),
+          menus: Menu.fromJson(jsonDecode(item['menus'] as String)),
           rating: item['rating'] as double,
           customerReviews:
               (jsonDecode(item['customerReviews'] as String) as List)

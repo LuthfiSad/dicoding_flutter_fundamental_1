@@ -6,15 +6,14 @@ import 'package:restaurant_flutter_dicoding/style/typography/restaurant_text_sty
 class RestaurantDescriptionWidget extends StatelessWidget {
   final String description;
 
-  const RestaurantDescriptionWidget({required this.description, Key? key})
-      : super(key: key);
+  const RestaurantDescriptionWidget({required this.description, super.key});
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => RestaurantDescriptionProvider(),
       child: Consumer<RestaurantDescriptionProvider>(
-        builder: (context, provider, child) {
+        builder: (_, provider, __) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

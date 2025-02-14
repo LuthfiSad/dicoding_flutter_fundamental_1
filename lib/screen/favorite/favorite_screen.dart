@@ -42,7 +42,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           ],
         ),
       ),
-      body: Consumer<LocalDatabaseProvider>(builder: (context, value, child) {
+      body: Consumer<LocalDatabaseProvider>(builder: (_, value, __) {
         final favoriteList = value.restaurantList;
         return switch (favoriteList.isNotEmpty) {
           true => ListView.builder(

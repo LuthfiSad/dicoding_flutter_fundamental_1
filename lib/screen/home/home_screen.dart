@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Consumer<RestaurantListProvider>(
-          builder: (context, provider, child) {
+          builder: (_, provider, __) {
             switch (provider.resultState) {
               case RestaurantListLoadingState():
                 return const LoadingStateWidget();

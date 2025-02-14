@@ -43,9 +43,7 @@ class RestaurantTheme {
       colorScheme: ColorScheme.light(
         primary: RestaurantColors.primary.color,
         onPrimary: RestaurantColors.onPrimary.color,
-        background: RestaurantColors.background.color,
         surface: RestaurantColors.surface.color,
-        onBackground: RestaurantColors.onSecondary.color,
         onSurface: RestaurantColors.onSecondary.color,
       ),
       brightness: Brightness.light,
@@ -60,9 +58,7 @@ class RestaurantTheme {
         colorScheme: ColorScheme.dark(
           primary: RestaurantColors.primary.color,
           onPrimary: RestaurantColors.onPrimary.color,
-          background: Colors.black,
           surface: Colors.grey[850]!,
-          onBackground: Colors.white,
           onSurface: Colors.white,
           onSecondary: Colors.white,
         ),
